@@ -1,0 +1,56 @@
+.df1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-logo {
+  height: 30px;
+  width: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #926dde;
+  color: white;
+}
+nav .routes {
+  color: white;
+  margin-right: 5em;
+}
+nav .routes .route-link {
+  text-decoration: none;
+  color: white;
+  padding: 0px 20px;
+  font-size: 17px;
+  transition: 0.3s ease;
+}
+nav .routes .route-link:hover {
+  color: black;
+}
+nav .user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .user-info p {
+  cursor: help;
+}
+nav .user-info img {
+  margin-right: 1em;
+  border-radius: 50px;
+}
+nav .user-info .logout-button {
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  border: 0px;
+  margin-left: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+nav .user-info .logout-button:hover {
+  color: black;
+}/*# sourceMappingURL=Navbar.css.map */

@@ -1,0 +1,65 @@
+
+.df1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-logo{
+    height: 30px;
+    width: 30px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #926dde;
+    color: white ;
+
+    .routes{
+        color: white;
+        margin-right: 5em;
+
+        .route-link{
+            text-decoration: none;
+            color: white;
+            padding: 0px 20px;
+            font-size: 17px;
+            transition: 0.3s ease;
+
+            &:hover{
+                color: black;
+            }
+        }
+    }
+
+    .user-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p{
+            cursor: help;
+        }
+        
+        img{
+            margin-right: 1em;
+            border-radius: 50px;
+        }
+
+        .logout-button{
+            background-color: rgba(255, 0, 0, 0); 
+            color: white;
+            border: 0px;
+            margin-left: 20px;
+            transition: 0.3s ease;
+            cursor: pointer;
+
+            &:hover{
+                color: black;
+            }
+        }
+    }
+}
