@@ -1,8 +1,9 @@
 import { Form } from "./Form";
+import './Form.css'
 
 export const CreatePost = () => {
     return(
-        <div>
+        <div className="center">
             <Form />
         </div>
     );

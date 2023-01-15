@@ -1,0 +1,55 @@
+$shadow: 1px 3px 23px -1px rgba(115,115,115,0.75);
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-post-form{
+    margin-top: 10em;
+    background-color: white;
+    padding: 20px 20px;
+    width: 40vw;
+    border-radius: 10px;
+
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+
+    p{
+        text-align: start;
+        margin-left: 1em;
+        font-weight: bold;
+        color: rgb(130, 130, 130);
+    }
+
+    form{
+
+        .form-title{
+            width: 93%;
+            border: 1.5px solid rgb(130, 130, 130);;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        textarea{
+            resize: none;
+        }
+
+        .form-text-area{
+            height: 200px;
+        }
+
+        .submit-form{
+            float: right;
+            margin-right: 15px;
+            transition: 0.3s ease;
+            padding: 10px 15px;
+            border: 1px solid rgb(93, 193, 93);
+            border-radius: 5px;
+            background-color: rgb(93, 193, 93);
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
