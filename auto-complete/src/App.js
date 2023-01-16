@@ -23,7 +23,12 @@ function App() {
       const regex = new RegExp(`${event}`, "gi"); // "gi" required for case sensitive
       return country.name.common.match(regex)
     })
-    setCountryMatch(matches);
+    if(event === ""){
+      setCountryMatch([]);
+    }else{
+      setCountryMatch(matches);
+    }
+    
   }
 
   console.log(countries);
@@ -31,10 +36,12 @@ function App() {
 
   return (
     <div className="App">
-      <h2>COUNTRY AUTOCOMPLETE</h2>
-      <input type="text" placeholder='Enter Count' onChange={(event) => searchCountries(event.target.value)} style={{width: "50%"}} />
+      <h2>COUNTRY AUTO-COMPLETE</h2>
+      <input type="text" placeholder='Try it out! Start typying a country!' onChange={(event) => searchCountries(event.target.value)} style={{width: "50%"}} />
         {countryMatch && countryMatch.map((item, index) => (
-          <SearchAutoComplete imgUrl={item.flags.svg} flag={item.flag} countryName={item.name.common} index={index}/>
+          <div className="parent-div">
+            <SearchAutoComplete imgUrl={item.flags.png} flag={item.flag} countryName={item.name.common} index={index}/>
+          </div>
         ))}
     </div>
   );

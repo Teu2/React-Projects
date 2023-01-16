@@ -1,1 +1,19 @@
-/*# sourceMappingURL=SearchCard.css.map */
+.auto-complete-card {
+  background-color: rgb(238, 238, 238);
+  width: 50%;
+  margin: 0px;
+}
+.auto-complete-card .card {
+  padding: 0px 15px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.auto-complete-card .card img {
+  height: 2em;
+  width: 3em;
+  margin-right: 10px;
+}
+.auto-complete-card .card h4 {
+  margin-right: 5px;
+}/*# sourceMappingURL=SearchCard.css.map */
