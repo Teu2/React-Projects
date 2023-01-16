@@ -2,12 +2,14 @@
     background-color: rgb(238, 238, 238);
     width: 50%;
     margin: 0px;
+    
 
     .card{
         padding: 0px 15px;
         display: flex;
         justify-content: start; 
         align-items: center;
+        border-bottom: 1px solid black ;
 
         img{
             height: 2em;

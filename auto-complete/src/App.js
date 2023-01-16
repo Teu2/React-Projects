@@ -23,12 +23,12 @@ function App() {
       const regex = new RegExp(`${event}`, "gi"); // "gi" required for case sensitive
       return country.name.common.match(regex)
     })
+
     if(event === ""){
       setCountryMatch([]);
     }else{
       setCountryMatch(matches);
     }
-    
   }
 
   console.log(countries);

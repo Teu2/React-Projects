@@ -8,6 +8,7 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  border-bottom: 1px solid black;
 }
 .auto-complete-card .card img {
   height: 2em;
