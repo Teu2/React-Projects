@@ -1,1 +1,1 @@
-📝 Some projects are still being updated and new projects will be added in the future
+📝 Some projects are still being updated and new projects will be added in the future.

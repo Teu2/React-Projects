@@ -1,0 +1,28 @@
+.user-posts {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.posts {
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+  width: 20em;
+  padding: 0px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.3);
+}
+.posts .post-title h4 {
+  margin-bottom: 0em;
+  color: rgb(67, 67, 67);
+}
+.posts .post-title p {
+  margin: 0em;
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+}
+.posts .post-description {
+  color: rgb(119, 119, 119);
+}/*# sourceMappingURL=Posts.css.map */

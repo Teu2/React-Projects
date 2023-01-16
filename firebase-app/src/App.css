@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+/* places the loading text in the center of the page */
+.loading-page{ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button{
+  cursor: pointer;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

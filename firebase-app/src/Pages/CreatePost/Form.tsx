@@ -17,6 +17,8 @@ interface CreateFormData {
 export const Form = () => {
 
     const [user] = useAuthState(auth);
+    const [date, setDate] = useState(new Date());
+
     const notify = () => toast.success("Posted! 👍");
 
     const schema = yup.object().shape({ // declare shape of shema
@@ -31,13 +33,15 @@ export const Form = () => {
     const postCol = collection(db, "userPosts");
 
     const onSubmitPost = async (data: CreateFormData) => {
+        setDate(new Date());
         await addDoc(postCol, {
             title: data.title,
             description: data.description,
             username: user?.displayName,
             userId: user?.uid,
+            datetime: date
         });
-
+        
         notify();
     }
 
@@ -46,13 +50,12 @@ export const Form = () => {
             <p>WHAT WOULD YOU LIKE TO SHARE</p>
             <form onSubmit={handleSubmit(onSubmitPost)}>
                 <input type="text" placeholder="Title..." {...register("title")} className="form-title"/>
-                <p style={{color: "red"}}>{errors.title?.message}</p>
-                <textarea placeholder="Content..." {...register("description")} className="form-title form-text-area"/>
-                <p style={{color: "red"}}>{errors.description?.message}</p>
+                <p style={{color: "red"}} className="error-message">{errors.title?.message}</p>
+                <textarea placeholder="Content..." {...register("description")} className="form-title form-text-area" />
+                <p style={{color: "red"}} className="error-message">{errors.description?.message}</p>
                 <input type="submit" className="submit-form" value="POST"/>
             </form>
             <ToastContainer position="bottom-center" limit={1} draggable/>
         </div>
-        
     );
 }
