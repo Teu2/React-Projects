@@ -2,7 +2,11 @@
     background-color: rgb(238, 238, 238);
     width: 50%;
     margin: 0px;
-    
+
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(159, 159, 159);
+    }
 
     .card{
         padding: 0px 15px;

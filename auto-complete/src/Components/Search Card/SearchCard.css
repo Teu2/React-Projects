@@ -3,6 +3,10 @@
   width: 50%;
   margin: 0px;
 }
+.auto-complete-card:hover {
+  cursor: pointer;
+  background-color: rgb(159, 159, 159);
+}
 .auto-complete-card .card {
   padding: 0px 15px;
   display: flex;
