@@ -17,7 +17,7 @@ interface Like{
     userId: string;
 }
 
-export const Post = (props: Posts) => {
+export const Post = (props: Posts, ) => {
     
     const {postypost} = props;
     const [user] = useAuthState(auth);
@@ -26,6 +26,8 @@ export const Post = (props: Posts) => {
 
     const likesCollection = collection(db, "likes");
     const likesDoc = query(likesCollection, where("postIdLiked", "==", postypost.id));
+
+    const postCol = collection(db, "userPosts");
 
     const getLikes = async () => {
         const data = await getDocs(likesDoc)
@@ -46,24 +48,43 @@ export const Post = (props: Posts) => {
 
     const onUnlikePost = async () => {
         try {
-
             const toDeleteRef = query(likesCollection, 
                 where("postIdLiked", "==", postypost.id), 
                 where("userIdWhoLiked", "==", user?.uid)
             );
             
-            const toDeleteDoc = await getDocs(toDeleteRef)
-            const deleteDocPost = doc(db, "likes", toDeleteDoc.docs[0].id) // reference the doc we want to delete
+            const toDeleteDoc = await getDocs(toDeleteRef);
+            const deleteDocPost = doc(db, "likes", toDeleteDoc.docs[0].id); // reference the doc we want to delete
             await deleteDoc(deleteDocPost);
             if(user){ // optimistic rendering - turning thumgs up to thumbs down on button click
                 setLikesNum((prev) => prev?.filter((like) => like.likeId !==  toDeleteDoc.docs[0].id));
-            }
+            } 
         } catch (error) {
             notify();
         }
     };
 
+    console.log(`postypost id == ${postypost.id}`);
+    console.log(`postypost user id == ${postypost.userId} ${user?.uid}`);
+
+    const onDeletePost = async () => {
+        try {
+            const toDeleteRef = query(postCol, 
+                where("userId", "==", user?.uid), 
+            );
+            const toDeleteDoc = await getDocs(toDeleteRef);
+            const toDeleteDocPost = doc(db, "userPosts", toDeleteDoc.docs[0].id);
+            await deleteDoc(toDeleteDocPost);
+            if(user){
+
+            }
+        } catch (error) {
+            
+        }
+    }
+
     const userLiked = likes?.find((like) => like.userId === user?.uid);
+    const isUserPost = postypost.userId == user?.uid; // check if its the users posts - needed so that only the user who posted can delete it
 
     useEffect(() => {
         getLikes();
@@ -80,6 +101,7 @@ export const Post = (props: Posts) => {
 
             <div className="footer-info">
                 <button onClick={userLiked ? onUnlikePost : onLikePost}> {userLiked ? <>👎</> : <>👍</>} </button>
+                {isUserPost ? <button onClick={onDeletePost}>🗑️</button> : <></>}
                 <p>Likes +{likes?.length}</p>
             </div>
         </div>

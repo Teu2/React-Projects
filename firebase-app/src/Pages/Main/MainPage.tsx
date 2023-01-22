@@ -10,7 +10,7 @@ export interface Post{
     datetime: string,
     description: string,
     title: string,
-    userid: string,
+    userId: string,
     username: string
 };
 
@@ -22,13 +22,16 @@ export const MainPage = () => {
     const getPosts = async () => { // firestore requires await
         const data = await getDocs(postCol);
         setPostCollection(data.docs.map((doc) => ({...doc.data(), id: doc.id})) as Post[]);
+        console.log("postCollection ===");
         console.log(data.docs.map((doc) => ({...doc.data(), id: doc.id})) as Post[]);
     }
 
     useEffect(() => {
         getPosts();
     }, []);
-    
+
+    {postCollection?.map((post) => (console.log(post.id)))}
+
     return(
         <div>
             <h2>POSTS</h2>

@@ -41,7 +41,7 @@ function App() {
     }
   }
 
-  console.log(countries);
+  console.log(countries);       
   console.log(`COPUNTRY MATCH : ${countryMatch}`);
 
   return (
