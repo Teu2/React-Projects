@@ -1,17 +1,21 @@
-import { useEffect, useState } from "react";
+import { Letter } from "../Letter";
+import { useContext } from "react";
+import { AppContext } from "../../App";
 
-export const Grid = ({difficultyNum}) => {
+export const Grid = () => {
 
-    console.log(difficultyNum + "grid difficulty");
-    const emptyBoard = [];
-    for(let i = 0; i < difficultyNum; i++){ // difficultyNum will be used to change the amount of guesses
-        emptyBoard.push(["", "", "", "", ""]);
-    }
-
-    console.log(emptyBoard);
-    const[board, setBoard] = useState(emptyBoard);
+    const {board, boardCount} = useContext(AppContext);
+    console.log(`board count == ${boardCount}`);
 
     return(
-        <div className="wordle-board"></div>
+        <div className="wordle-board">
+            {board.map((row, rowIndex) => (
+                <div key={rowIndex} className="row">
+                    {row.map((val, colIndex) => (
+                        <div key={colIndex}><Letter value={val} letterRow={rowIndex} letterCol={colIndex} className="letter"/></div>
+                    ))}
+                </div>
+            ))}
+        </div>
     );
 }

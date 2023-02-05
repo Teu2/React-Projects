@@ -1,0 +1,29 @@
+button{
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+    margin-bottom: 3em;
+
+    h1{
+        margin-left: 80px;
+    }
+
+    .navbar-options{ 
+
+        button{
+            margin-left: 5px;
+        }
+    }
+}
+
+.app-logo{
+    height: 20px;
+    width: 20px;
+}
