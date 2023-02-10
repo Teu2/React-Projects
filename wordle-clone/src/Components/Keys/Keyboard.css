@@ -1,0 +1,32 @@
+.keyboard {
+  margin-top: 6em;
+}
+.keyboard .key-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.keyboard .key-row .key {
+  background-color: #d3d6da;
+  padding: 5px;
+  width: 35px;
+  height: 50px;
+  margin: 3px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+.keyboard .key-row .key:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+.keyboard .key-row #cmd {
+  width: 70px;
+}
+.keyboard .key-row .react-icon {
+  height: 30px;
+  width: 30px;
+}/*# sourceMappingURL=Keyboard.css.map */
